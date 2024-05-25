@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="News.App.MainPage">
+    <ContentPage.Content>
+        <Grid>
+            <!-- Define the row heights -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <!-- Top Bar -->
+                <RowDefinition Height="Auto" />
+                <!-- Search Bar -->
+                <RowDefinition Height="Auto" />
+                <!-- Banner -->
+                <RowDefinition Height="*" />
+                <!-- Main Content -->
+                <RowDefinition Height="50" />
+                <!-- Footer -->
+            </Grid.RowDefinitions>
+
+            <!-- Top Bar -->
+            <StackLayout Grid.Row="0" BackgroundColor="LightGray" Orientation="Horizontal" Padding="10">
+                <Grid VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Супер Инфо" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Large"/>
+                    <ImageButton Source="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/800px-Hamburger_icon.svg.png" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Transparent" />
+                </Grid>
+            </StackLayout>
+
+            <!-- Search Bar -->
+            <SearchBar Grid.Row="1" Placeholder="Издөө..." VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+
+            <!-- Main Content -->
+            <StackLayout Grid.Row="3" BackgroundColor="#ededed">
+                <ScrollView AbsoluteLayout.LayoutBounds="0,50,1,1" AbsoluteLayout.LayoutFlags="All">
+
+                    <StackLayout>
+                        <Frame BackgroundColor="LightBlue" Padding="0" Margin="10" CornerRadius="20">
+                            <Image HorizontalOptions="FillAndExpand"
+Aspect="AspectFill"
+        Source="https://upload.wikimedia.org/wikipedia/commons/1/1f/Super.info.jpg"/>
+                        </Frame>
+                        <Frame BackgroundColor="White" Margin="10,0,10,20" Padding="0" CornerRadius="20">
+                            <StackLayout>
+                                <Image HorizontalOptions="FillAndExpand"
+Aspect="AspectFill"
+        Source="https://www.super.kg/upload/janylyk/2024/05/2038831215.jpg"/>
+                                <StackLayout BackgroundColor="White" Padding="15,10" >
+                                    <Label Text="Акылбек Жапаров" FontSize="Title" TextColor="Black" />
+                                    <Label >“Кабар” маалымат агенттигине алдыда пенсиянын көтөрүлүшү тууралуу маек берди.</Label>
+                                </StackLayout>
+                                <BoxView HeightRequest="1"
+  BackgroundColor="gray"
+  HorizontalOptions="FillAndExpand"
+  VerticalOptions="Center"
+  Margin="0,0,0,0" />
+                                <StackLayout BackgroundColor="White" Padding="15,5,15,15" Orientation="Horizontal" >
+                                    <Label Text="Дата:" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+                                    <Label HorizontalOptions="End">24.02.24</Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                        <Frame BackgroundColor="White" Margin="10,0,10,20" Padding="0" CornerRadius="20">
+                            <StackLayout>
+                                <Image HorizontalOptions="FillAndExpand"
+Aspect="AspectFill"
+        Source="https://www.super.kg/upload/janylyk/2024/05/1262513867.jpg"/>
+                                <StackLayout BackgroundColor="White" Padding="15,10" >
+                                    <Label Text="Густаво Петро" FontSize="Title" TextColor="Black" />
+                                    <Label >Палестинада Колумбиянын элчилигин ачууга буйрук берди. Бул тууралуу чет элдик басылмалар жазды.</Label>
+                                </StackLayout>
+                                <BoxView HeightRequest="1"
+  BackgroundColor="gray"
+  HorizontalOptions="FillAndExpand"
+  VerticalOptions="Center"
+  Margin="0,0,0,0" />
+                                <StackLayout BackgroundColor="White" Padding="15,5,15,15" Orientation="Horizontal" >
+                                    <Label Text="Дата:" TextColor="Black" HorizontalOptions="StartAndExpand"/>
+                                    <Label HorizontalOptions="End">24.02.24</Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                </ScrollView>
+                
+            </StackLayout>
+            <!-- Activity Indicator -->
+            <ActivityIndicator Grid.Row="3" IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <!-- Footer -->
+            <StackLayout Grid.Row="4" BackgroundColor="LightGray" Orientation="Horizontal" Padding="10">
+                <Label Text="super.kg" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Medium"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
